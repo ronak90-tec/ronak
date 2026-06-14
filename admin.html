@@ -21,27 +21,43 @@
     <main class="container stack">
       <section class="card">
         <h1>Admin Panel</h1>
-        <p>Yeh section content update aur student support ke liye ready hai. Access key: shuklaronak19</p>
+        <p>Yeh secure section content update aur student support ke liye ready hai. Login key: shuklaronak19</p>
       </section>
 
       <section class="grid two-up">
-        <article class="card">
-          <h2>Admin checklist</h2>
-          <ul class="bullet-list">
-            <li>New notes upload karke notes section update karo</li>
-            <li>Test aur answer key links add karo</li>
-            <li>Contact form responses ko Gmail se monitor karo</li>
-          </ul>
+        <article class="card login-card">
+          <h2>Admin Login</h2>
+          <p>Apna access key enter karo taaki dashboard khule.</p>
+          <label>
+            Access Key
+            <input id="adminKey" type="password" placeholder="shuklaronak19" />
+          </label>
+          <button id="loginBtn" class="btn btn-primary" type="button">Login</button>
+          <p id="loginStatus" class="small-note"></p>
         </article>
-        <article class="card">
-          <h2>Quick actions</h2>
+
+        <article class="card" id="adminDashboard" hidden>
+          <h2>Admin Dashboard</h2>
           <ul class="bullet-list">
-            <li>Add new PDFs in the notes folder</li>
-            <li>Update test questions weekly</li>
-            <li>Reply to students on 9968253533 / shuklaronak19@gmail.com</li>
+            <li>Notes section me naye PDF files upload karo.</li>
+            <li>Test aur answer key links ko weekly update karo.</li>
+            <li>Student queries ko 9968253533 aur shuklaronak19@gmail.com par reply karo.</li>
           </ul>
+          <a class="btn btn-secondary" href="notes.html">Open Notes</a>
+          <a class="btn btn-secondary" href="tests.html">Open Tests</a>
         </article>
       </section>
+
+      <section class="card">
+        <h2>Admin checklist</h2>
+        <ul class="bullet-list">
+          <li>New notes upload karke notes section update karo.</li>
+          <li>Mock tests aur answer keys add karo.</li>
+          <li>Contact form responses ko Gmail se monitor karo.</li>
+        </ul>
+      </section>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
