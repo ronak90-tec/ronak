@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Tuition | Aspire Learning Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <nav class="nav container">
+        <a class="brand" href="index.html">Aspire Learning Hub</a>
+        <div class="nav-links">
+          <a href="notes.html">Notes</a>
+          <a href="tests.html">Tests</a>
+          <a href="tution.html">Tuition</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container stack">
+      <section class="card">
+        <h1>Online Tuition Registration</h1>
+        <p>Fill in your details to register for online tuition support and study guidance.</p>
+      </section>
+
+      <section class="grid two-up">
+        <article class="card">
+          <h2>Student Registration Form</h2>
+          <form class="contact-form" action="mailto:shuklaronak19@gmail.com" method="post" enctype="text/plain">
+            <label>Full Name<input type="text" name="fullName" required /></label>
+            <label>Class<input type="text" name="class" required /></label>
+            <label>Phone Number<input type="tel" name="phone" required /></label>
+            <label>Email Address<input type="email" name="email" /></label>
+            <label>Subjects Needed<input type="text" name="subjects" required /></label>
+            <label>Preferred Timings<input type="text" name="timings" /></label>
+            <label>Message<textarea name="message" rows="4" placeholder="Tell us your learning goals or requirements."></textarea></label>
+            <button class="btn btn-primary" type="submit">Send Registration</button>
+            <p class="small-note">This opens your email app to send the registration details.</p>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Why join online tuition?</h2>
+          <ul class="bullet-list">
+            <li>Personalized support for Class 6 to 12 students.</li>
+            <li>Practice notes, revision support, and test preparation.</li>
+            <li>Fast communication through phone and email.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <p>© 2026 Aspire Learning Hub.</p>
+    </footer>
+  </body>
+</html>
