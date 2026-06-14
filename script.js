@@ -8,14 +8,23 @@ const loginBtn = document.getElementById('loginBtn');
 const adminKey = document.getElementById('adminKey');
 const loginStatus = document.getElementById('loginStatus');
 
+const ADMIN_PASSWORD = 'ronak2326';
+
+if (window.location.pathname.endsWith('admin.html')) {
+  if (localStorage.getItem('aspireAdminLoggedIn') === 'true') {
+    window.location.replace('upload.html');
+  }
+}
+
 if (loginBtn && adminKey && loginStatus) {
   loginBtn.addEventListener('click', () => {
     const value = adminKey.value.trim();
-    if (value === 'ronak2326') {
-      loginStatus.textContent = 'Login successful. You can now open the upload dashboard.';
+    if (value === ADMIN_PASSWORD) {
+      localStorage.setItem('aspireAdminLoggedIn', 'true');
+      loginStatus.textContent = 'Login successful. Redirecting to the upload dashboard.';
       window.location.href = 'upload.html';
     } else {
-      loginStatus.textContent = 'Invalid password. Use: ronak2326';
+      loginStatus.textContent = 'Invalid password.';
     }
   });
 
@@ -32,7 +41,29 @@ const pdfFile = document.getElementById('pdfFile');
 const uploadStatus = document.getElementById('uploadStatus');
 const uploadPreview = document.getElementById('uploadPreview');
 
+if (window.location.pathname.endsWith('upload.html')) {
+  if (localStorage.getItem('aspireAdminLoggedIn') !== 'true') {
+    window.location.replace('admin.html');
+  }
+}
+
 if (uploadBtn && className && pdfFile && uploadStatus && uploadPreview) {
+  function renderUploadedNotes() {
+    const notes = JSON.parse(localStorage.getItem('aspireUploadedNotes') || '[]');
+    uploadPreview.innerHTML = '';
+    if (!notes.length) {
+      uploadPreview.innerHTML = '<li>No files uploaded yet.</li>';
+      return;
+    }
+    notes.forEach((note) => {
+      const item = document.createElement('li');
+      item.innerHTML = `<strong>${note.title}</strong> — <a href="${note.dataUrl}" target="_blank" rel="noopener">${note.fileName}</a>`;
+      uploadPreview.appendChild(item);
+    });
+  }
+
+  renderUploadedNotes();
+
   uploadBtn.addEventListener('click', () => {
     const title = className.value.trim();
     const file = pdfFile.files[0];
@@ -42,11 +73,21 @@ if (uploadBtn && className && pdfFile && uploadStatus && uploadPreview) {
       return;
     }
 
-    const item = document.createElement('li');
-    item.textContent = `${title}: ${file.name}`;
-    uploadPreview.prepend(item);
-    uploadStatus.textContent = 'PDF upload request received. Add the file to the notes folder for live publishing.';
-    className.value = '';
-    pdfFile.value = '';
+    const reader = new FileReader();
+    reader.onload = () => {
+      const notes = JSON.parse(localStorage.getItem('aspireUploadedNotes') || '[]');
+      notes.unshift({
+        title,
+        fileName: file.name,
+        dataUrl: reader.result,
+        uploadedAt: new Date().toLocaleString()
+      });
+      localStorage.setItem('aspireUploadedNotes', JSON.stringify(notes.slice(0, 20)));
+      renderUploadedNotes();
+      uploadStatus.textContent = 'PDF uploaded successfully to this browser session.';
+      className.value = '';
+      pdfFile.value = '';
+    };
+    reader.readAsDataURL(file);
   });
 }

@@ -34,5 +34,21 @@
         <article class="card"><h3>Class 12</h3><p>Final exam preparation notes and revision guides.</p><a class="btn btn-primary" href="notes/class-12.pdf" download>Download PDF</a></article>
       </section>
     </main>
+
+    <script src="script.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const notesList = document.getElementById('notesList');
+        const uploaded = JSON.parse(localStorage.getItem('aspireUploadedNotes') || '[]');
+        if (!uploaded.length) return;
+
+        uploaded.forEach((note) => {
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.innerHTML = `<h3>${note.title}</h3><p>Uploaded PDF: ${note.fileName}</p><a class="btn btn-primary" href="${note.dataUrl}" download="${note.fileName}">Download PDF</a>`;
+          notesList.appendChild(card);
+        });
+      });
+    </script>
   </body>
 </html>
