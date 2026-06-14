@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin | Aspire Learning Hub</title>
+    <title>Admin Login | Aspire Learning Hub</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -20,41 +20,30 @@
 
     <main class="container stack">
       <section class="card">
-        <h1>Admin Panel</h1>
-        <p>Yeh secure section content update aur student support ke liye ready hai. Login key: shuklaronak19</p>
+        <h1>Admin Access</h1>
+        <p>Use this secure page to enter the admin dashboard and upload PDF notes for students.</p>
       </section>
 
       <section class="grid two-up">
         <article class="card login-card">
           <h2>Admin Login</h2>
-          <p>Apna access key enter karo taaki dashboard khule.</p>
+          <p>Enter the password to continue to the admin dashboard.</p>
           <label>
-            Access Key
-            <input id="adminKey" type="password" placeholder="shuklaronak19" />
+            Password
+            <input id="adminKey" type="password" placeholder="ronak2326" />
           </label>
           <button id="loginBtn" class="btn btn-primary" type="button">Login</button>
           <p id="loginStatus" class="small-note"></p>
         </article>
 
-        <article class="card" id="adminDashboard" hidden>
-          <h2>Admin Dashboard</h2>
+        <article class="card">
+          <h2>What you can do</h2>
           <ul class="bullet-list">
-            <li>Notes section me naye PDF files upload karo.</li>
-            <li>Test aur answer key links ko weekly update karo.</li>
-            <li>Student queries ko 9968253533 aur shuklaronak19@gmail.com par reply karo.</li>
+            <li>Upload PDF notes for Class 6 to 12.</li>
+            <li>Manage test resources and study material.</li>
+            <li>Keep the website updated for students and parents.</li>
           </ul>
-          <a class="btn btn-secondary" href="notes.html">Open Notes</a>
-          <a class="btn btn-secondary" href="tests.html">Open Tests</a>
         </article>
-      </section>
-
-      <section class="card">
-        <h2>Admin checklist</h2>
-        <ul class="bullet-list">
-          <li>New notes upload karke notes section update karo.</li>
-          <li>Mock tests aur answer keys add karo.</li>
-          <li>Contact form responses ko Gmail se monitor karo.</li>
-        </ul>
       </section>
     </main>
 

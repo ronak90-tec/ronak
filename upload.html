@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Notes | Aspire Learning Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <nav class="nav container">
+        <a class="brand" href="index.html">Aspire Learning Hub</a>
+        <div class="nav-links">
+          <a href="notes.html">Notes</a>
+          <a href="tests.html">Tests</a>
+          <a href="upload.html">Upload</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container stack">
+      <section class="card">
+        <h1>Admin Upload Dashboard</h1>
+        <p>Upload PDF notes here. After upload, the note will appear in the notes page.</p>
+      </section>
+
+      <section class="grid two-up">
+        <article class="card">
+          <h2>Upload PDF</h2>
+          <label>
+            Class
+            <input id="className" type="text" placeholder="Class 10" />
+          </label>
+          <label>
+            PDF File
+            <input id="pdfFile" type="file" accept="application/pdf" />
+          </label>
+          <button id="uploadBtn" class="btn btn-primary" type="button">Upload PDF</button>
+          <p id="uploadStatus" class="small-note">Upload feature works in this static version by saving a local demo note card in the browser.</p>
+        </article>
+
+        <article class="card">
+          <h2>Uploaded Notes Preview</h2>
+          <ul id="uploadPreview" class="bullet-list">
+            <li>No files uploaded yet.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
