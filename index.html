@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aspire Learning Hub — class 6 to 12 notes, test pages, and student support."
+    />
+    <title>Aspire Learning Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <a class="brand" href="index.html">Aspire Learning Hub</a>
+        <div class="nav-links">
+          <a href="notes.html">Notes</a>
+          <a href="tests.html">Tests</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </nav>
+
+      <section class="container hero-grid">
+        <div>
+          <p class="eyebrow">Free learning platform for students</p>
+          <h1>Class 6 to 12 notes, practice tests, and support in one place.</h1>
+          <p class="lead">
+            Aspire Learning Hub helps students study smart with simple notes, test pages,
+            and a direct contact system for parents and learners.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="notes.html">Open Notes</a>
+            <a class="btn btn-secondary" href="tests.html">Try Test Page</a>
+          </div>
+        </div>
+        <aside class="card hero-card">
+          <h2>Quick Contact</h2>
+          <ul class="contact-list">
+            <li>📞 9968253533</li>
+            <li>✉️ shuklaronak19@gmail.com</li>
+            <li>📚 Class 6 to 12</li>
+          </ul>
+        </aside>
+      </section>
+    </header>
+
+    <main class="container stack">
+      <section class="grid three-up">
+        <article class="card">
+          <h3>Study Notes</h3>
+          <p>Simple chapter-wise notes for all major subjects, ready to revise anytime.</p>
+        </article>
+        <article class="card">
+          <h3>Test Page</h3>
+          <p>Practice questions and quizzes to improve confidence before exams.</p>
+        </article>
+        <article class="card">
+          <h3>Admin Panel</h3>
+          <p>Protected access for managing content and student communication.</p>
+        </article>
+      </section>
+
+      <section class="grid two-up">
+        <article class="card">
+          <h2>Why this site works</h2>
+          <ul class="bullet-list">
+            <li>Fast static hosting on GitHub Pages</li>
+            <li>Free lifetime hosting with no server cost</li>
+            <li>Easy updates for notes and test pages</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Contact form</h2>
+          <form class="contact-form" action="mailto:shuklaronak19@gmail.com" method="post" enctype="text/plain">
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="phone" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send via Gmail</button>
+            <p class="small-note">This opens your email app for a direct Gmail response.</p>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <p>© 2026 Aspire Learning Hub. Built for free GitHub Pages deployment.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
